@@ -2,12 +2,14 @@
 #define _stack_h_
 #include <vector>
 #include <iostream>
+
 using namespace std;
+
 class Stack {
 private:
 	vector<int> stack;
 public:
-	Stack() {}
+	Stack() {}//конструктор
 	Stack(const Stack& tmp) {//конструктор копий
 		this->stack = tmp.stack;
 	}
@@ -38,6 +40,5 @@ public:
 	~Stack() {//деструктор
 		this->stack.clear();
 	}
-
 };
 #endif
