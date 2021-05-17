@@ -1,40 +1,28 @@
 #include <iostream>
 #include "stack.h"
-#include <vector>
 
-using namespace std;
 
 int main() {
 	Stack X;
-	for (int i = 0; i < 15; i++) {
+	for (int i = 0; i < 33; i++) {
 		X.push(i);
 	}
-	cout << "X:" << X << '\n';
-
-	Stack Y(X);//проверка конструктора копий
-	for (int i = 0; i < 5; i++) {
+	std::cout << "X:" << X << '\n';
+	
+	Stack Y(X);
+	for (int i = 0; i < 10; i++) {
 		Y.pop();
 	}
-	cout << "Y:" << Y << '\n';
+	std::cout << "Y:" << Y << '\n';
 
-	Stack Z;
-	Z = Y;//проверка оператора присваивания
-	for (int i = 10; i < 15; i++) {
-		int n = 6;
-		Z.push(n);
-	}
-	cout << "Z:" << Z << '\n';
-
-	vector<int> R = Y.get();//проверка метода вывода
-	cout << "R:";
-	for (int i = 0; i < R.size(); i++) {
-		cout << R[i] << " ";    
-	}
-	cout << '\n';
+	std::cout << X.get(3) << '\n';
 	
-	Stack W;
-	W.set(X.get());//проверка методов ввода вывода
-	cout << "W:" << W << '\n';
+	Stack Z;
+	Z = X;
+	std::cout << "Z:" << Z << '\n';
+	int array[] = { 4,3,2,1,8,7,6,5 };
+	Z.set(array, 8);
+	std::cout << "Z:" << Z << '\n';
 
 	return 0;
 }
